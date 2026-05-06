@@ -57,9 +57,9 @@ class YouGileProjectAPI:
     # поиск по id проекта с не правильным токеном
     def search_project_by_id_negative(self):
         id_project = self.get_list_projects()["content"][1]["id"]
-        url = self.base_url+project_url+f"/{id_project}"
+        url = self.base_url+project_url+f"/{123456}"
         headers = {
-            "Authorization": f"Bearer {"1234567890"}"
+            "Authorization": f"Bearer {self.token}"
         }
         response = requests.get(url, headers=headers)
         return response
