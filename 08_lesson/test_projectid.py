@@ -2,9 +2,9 @@ from yougile_api import YouGileProjectAPI
 
 # Данные для авторизации (подтягиваются из окружения)
 base_url = 'https://ru.yougile.com/api-v2'
-login_name = 'misha.vish@mail.ru'
+login_name = 
 password_name = 
-name_project = 
+name_project = 'Тест'
 api = YouGileProjectAPI(base_url)
 # Метод post(создание проекта)
 def test_create_project_positive():
