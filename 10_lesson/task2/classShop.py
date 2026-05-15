@@ -2,12 +2,13 @@ import allure
 from selenium.webdriver.remote.webdriver import WebDriver
 from selenium.webdriver.common.by import By
 
+
 class MainShop:
     def __init__(self, driver: WebDriver) -> None:
         self._driver: WebDriver = driver
         self._driver.maximize_window()
         self._driver.implicitly_wait(10)
-        self._driver.get("https://saucedemo.com")
+        self._driver.get("https://www.saucedemo.com/")
 
     @allure.step("Ввод учетных данных: логин '{username}'")
     def input_data(self, username: str, password: str) -> None:
@@ -26,7 +27,7 @@ class MainShop:
 
     @allure.step("Переход в корзину и заполнение данных клиента: {name} {surname}")
     def checkout(self, name: str, surname: str, postal_code: str) -> None:
-        self._driver.get("https://saucedemo.comcart.html")
+        self._driver.get("https://www.saucedemo.com/cart.html")
         self._driver.find_element(By.ID, "checkout").click()
         self._driver.find_element(By.ID, "first-name").send_keys(name)
         self._driver.find_element(By.ID, "last-name").send_keys(surname)
